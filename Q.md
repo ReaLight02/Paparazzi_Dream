@@ -3,3 +3,4 @@
 3. Why cross-Entropy loss function?
 4. Number of layers
 5. status out_of_range
+6. size of images before cnn
