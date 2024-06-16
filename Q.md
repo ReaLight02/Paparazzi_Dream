@@ -2,3 +2,4 @@
 2. Why Adam optimizer?
 3. Why cross-Entropy loss function?
 4. Number of layers
+5. status out_of_range
