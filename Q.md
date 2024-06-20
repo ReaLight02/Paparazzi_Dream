@@ -6,3 +6,4 @@
 6. Size of images before cnn
 7. Kernel_size values in conv2d layer
 8. Early stopping
+9. Batch size
