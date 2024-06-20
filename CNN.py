@@ -1,8 +1,3 @@
-'C:/Users/mocan/Desktop/Paparazzi_Dream/Dataset_Train'
-'C:/Users/mocan/Desktop/Paparazzi_Dream/Dataset_Test'
-
-
-
 import mapping
 import data_loader
 from keras.models import Sequential
@@ -23,6 +18,11 @@ classifier.add(MaxPool2D(pool_size=(2, 2)))
 classifier.add(Conv2D(64, kernel_size=(5, 5), strides=(1, 1), activation='relu'))
 classifier.add(MaxPool2D(pool_size=(2, 2)))
 
+# Aggiungi un altro livello di convoluzione e pooling
+classifier.add(Conv2D(128, kernel_size=(5, 5), strides=(1, 1), activation='relu'))
+classifier.add(MaxPool2D(pool_size=(2, 2)))
+
+
 # Aggiungi il livello di flattening
 classifier.add(Flatten())
 
@@ -30,8 +30,10 @@ classifier.add(Flatten())
 classifier.add(Dense(64, activation='relu'))
 classifier.add(Dense(mapping.OutputNeurons, activation='softmax'))
 
+
 # Compilare il modello
 classifier.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+
 
 # Misurare il tempo di addestramento
 StartTime = time.time()
@@ -39,10 +41,8 @@ StartTime = time.time()
 # Addestrare il modello
 classifier.fit(
     data_loader.training_set,
-    steps_per_epoch=70,
-    epochs=10,
+    epochs=50,
     validation_data=data_loader.test_set,
-    validation_steps=15
 )
 
 EndTime = time.time()
