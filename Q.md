@@ -7,4 +7,4 @@
 7. Kernel_size values in conv2d layer
 8. Early stopping
 9. Batch size
-10. splitting dataset manual vs automatic
+10. Splitting dataset manual vs automatic
