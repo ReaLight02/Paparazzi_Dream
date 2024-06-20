@@ -4,4 +4,5 @@
 4. Number of layers
 5. Status out_of_range
 6. Size of images before cnn
-7. kernel_size values in conv2d layer
+7. Kernel_size values in conv2d layer
+8. Early stopping
