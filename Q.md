@@ -8,3 +8,4 @@
 8. Early stopping
 9. Batch size
 10. Splitting dataset manual vs automatic
+11. Gestione 1+ faccia
