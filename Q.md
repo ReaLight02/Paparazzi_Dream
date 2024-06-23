@@ -10,3 +10,4 @@
 10. Splitting dataset manual vs automatic
 11. Gestione 1+ faccia
 12. Input prediction usare numpy array / conversione img
+13. limitazioni: haar
