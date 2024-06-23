@@ -7,7 +7,7 @@ This repository was created for the purpose of allowing the team members to work
 @ShinobuSmile - OpenCV expert <br>
 
 ## Repository organization
-The repository is organized in folders, where each has a specific goal:
+The repository is organized in folders, where each has a specific goal: <br>
 CNN - contains all the files needed in order to crop images of a dataset and train the model <br>
 Dataset - contains the original dataset from Kaggle <br>
 Filters - contains the files needed in order to apply the filters on images <br>
