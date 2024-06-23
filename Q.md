@@ -5,7 +5,7 @@
 5. Status out_of_range
 6. Size of images before cnn
 7. Kernel_size values in conv2d layer
-8. Early stopping
+8. Early stopping (1e-4 + when it happens)
 9. Batch size
 10. Splitting dataset manual vs automatic
 11. Gestione 1+ faccia
