@@ -45,8 +45,8 @@ rlronp = ReduceLROnPlateau(monitor="val_loss", factor=0.8, patience=5, verbose=1
 # Model training and evaluation
 classifier.fit(
     data_loader.training_set,
-    epochs=100,
-    batch_size=32,
+    epochs=50,
+    batch_size=8,
     callbacks=[early_stopping, rlronp],
     validation_data=data_loader.test_set,
 )
@@ -54,6 +54,9 @@ classifier.fit(
 EndTime = time.time()
 
 print("###### Total Time Taken: ", round((EndTime - StartTime) / 60), "Minutes ######")
+
+# Save cnn model
+classifier.save("model.h5")
 
 # Save cnn model
 classifier.save("model.h5")
