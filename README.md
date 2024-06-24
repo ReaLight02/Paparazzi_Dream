@@ -7,17 +7,11 @@ This repository was created for the purpose of allowing the team members to work
 [@ShinobuSmile](https://github.com/ShinobuSmile) - OpenCV expert <br>
 
 ## Repository organization
-Paparazzi_Dream/ <br>
-├── src/ <br>
-│    ├── components/ <br>
-│    │   ├── Header.js <br>
-│    │   └── Footer.js <br>
-│    ├── App.js <br>
-│    └── index.js <br>
-├── public/ <br>
-│    ├── index.html <br>
-│    └── favicon.ico <br>
-├── .gitignore <br>
-├── package.json <br>
-└── README.md <br>
+Paparazzi Dream <br>
+  NN <br>
+  Dataset <br>
+  Filters <br>
+  Prediction <br>
+  Utilites <br>
+  README.md <br>
 
