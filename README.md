@@ -8,7 +8,7 @@ This repository was created for the purpose of allowing the team members to work
 
 ## Repository organization
 Paparazzi Dream <br>
-&nbsp;&nbsp;&nbsp;&nbsp;NN <br>
+&nbsp;&nbsp;&nbsp;&nbsp;CNN <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CNN.py <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cropping.py <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;data_loader.py <br>
