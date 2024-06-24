@@ -1,56 +1,59 @@
+import time
 import mapping
 import data_loader
 from keras.models import Sequential
-from keras.layers import Input, Conv2D, MaxPool2D, Flatten, Dense
-from keras.callbacks import EarlyStopping
-import time
+from keras.callbacks import EarlyStopping, ReduceLROnPlateau
+from keras.layers import Input, Conv2D, MaxPool2D, Flatten, Dense, Dropout
+from tensorflow.keras.regularizers import l2
 
-# Creare il modello
+
+# Create model
 classifier = Sequential()
 
-# Aggiungi il livello di input
+# Add input layer
 classifier.add(Input(shape=(64, 64, 3)))
 
-# Aggiungi i livelli di convoluzione e pooling
-classifier.add(Conv2D(32, kernel_size=(5, 5), strides=(1, 1), activation='relu'))
+classifier.add(Conv2D(32, (5, 5), activation="relu", kernel_regularizer=l2(0.001)))
 classifier.add(MaxPool2D(pool_size=(2, 2)))
+classifier.add(Dropout(0.25))
 
-# Aggiungi un altro livello di convoluzione e pooling
-classifier.add(Conv2D(64, kernel_size=(5, 5), strides=(1, 1), activation='relu'))
+classifier.add(Conv2D(64, (3, 3), activation="relu", kernel_regularizer=l2(0.001)))
 classifier.add(MaxPool2D(pool_size=(2, 2)))
+classifier.add(Dropout(0.25))
 
-# Aggiungi un altro livello di convoluzione e pooling
-classifier.add(Conv2D(128, kernel_size=(5, 5), strides=(1, 1), activation='relu'))
-classifier.add(MaxPool2D(pool_size=(2, 2)))
-
-
-# Aggiungi il livello di flattening
+# Add flatten layer
 classifier.add(Flatten())
 
-# Aggiungi i livelli completamente connessi
-classifier.add(Dense(64, activation='relu'))
-classifier.add(Dense(mapping.OutputNeurons, activation='softmax'))
+# Add fully connected layer
+classifier.add(Dense(128, activation="relu", kernel_regularizer=l2(0.001)))
+classifier.add(Dense(mapping.OutputNeurons, activation="softmax"))
 
+# Compile the model
+classifier.compile(
+    loss="categorical_crossentropy", optimizer="adam", metrics=["accuracy"]
+)
 
-# Compilare il modello
-classifier.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-
-
-# Misurare il tempo di addestramento
+# Save time for later use
 StartTime = time.time()
 
-early_stopping = EarlyStopping(monitor='val_loss', patience=10, min_delta = 1e-4, verbose = 1)
+# Define early stopping callback
+early_stopping = EarlyStopping(
+    monitor="val_loss", patience=10, min_delta=1e-4, verbose=1
+)
+rlronp = ReduceLROnPlateau(monitor="val_loss", factor=0.8, patience=5, verbose=1)
 
-# Addestrare il modello
+# Model training and evaluation
 classifier.fit(
     data_loader.training_set,
-    epochs=30,
-    batch_size=64,
-    callbacks=[early_stopping],
-    validation_data=data_loader.test_set
+    epochs=100,
+    batch_size=32,
+    callbacks=[early_stopping, rlronp],
+    validation_data=data_loader.test_set,
 )
 
 EndTime = time.time()
-print("###### Total Time Taken: ", round((EndTime - StartTime) / 60), 'Minutes ######')
 
-classifier.save('fizzio.h5')
+print("###### Total Time Taken: ", round((EndTime - StartTime) / 60), "Minutes ######")
+
+# Save cnn model
+classifier.save("model.h5")
