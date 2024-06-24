@@ -7,7 +7,6 @@
 7. Kernel_size values in conv2d layer
 8. Early stopping (1e-4 + when it happens)
 9. Batch size
-10. Splitting dataset manual vs automatic
 11. Gestione 1+ faccia
 12. Input prediction usare numpy array / conversione img
 13. limitazioni: haar
