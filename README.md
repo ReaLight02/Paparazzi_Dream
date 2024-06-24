@@ -1,5 +1,5 @@
 # Introduction
-This repository was created for the purpose of allowing the team members to work together in a simple way. The main objective is to create a CNN model that trains itself on a dataset and tries to predict the outcomes on images it has never seen before. The secondary objective is to apply filters on these images.
+The purpose of this repository is to facilitate work among team members. The primary goal is to develop a CNN model capable of training on a dataset and making predictions on unseen images. The secondary goal is to implement image filtering.
 
 ## Repository organization
 &nbsp;&nbsp;&nbsp;&nbsp;CNN <br>   	
