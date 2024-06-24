@@ -30,5 +30,4 @@ test_set = train_datagen.flow_from_directory(
     subset="validation",
     class_mode="categorical",
     color_mode="rgb",
-)lor_mode="rgb",
 )
