@@ -1,7 +1,7 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 
-TrainingImagePath = "E:/LAB/cropped/"
+TrainingImagePath = "C:\\Users\\antop\\Desktop\\progetto\\cropped"
 
 # Data augmentation and normalization
 train_datagen = ImageDataGenerator(
@@ -30,4 +30,5 @@ test_set = train_datagen.flow_from_directory(
     subset="validation",
     class_mode="categorical",
     color_mode="rgb",
+)lor_mode="rgb",
 )
