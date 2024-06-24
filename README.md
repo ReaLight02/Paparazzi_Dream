@@ -8,10 +8,10 @@ This repository was created for the purpose of allowing the team members to work
 
 ## Repository organization
 Paparazzi Dream <br>
-  NN <br>
-  Dataset <br>
-  Filters <br>
-  Prediction <br>
-  Utilites <br>
-  README.md <br>
+&nbsp;&nbsp;&nbsp;&nbsp;NN <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Dataset <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Filters <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Prediction <br>
+&nbsp;&nbsp;&nbsp;&nbsp;Utilites <br>
+&nbsp;&nbsp;&nbsp;&nbsp;README.md <br>
 
