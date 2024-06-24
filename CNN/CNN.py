@@ -17,7 +17,7 @@ classifier.add(Conv2D(32, (5, 5), activation="relu", kernel_regularizer=l2(0.001
 classifier.add(MaxPool2D(pool_size=(2, 2)))
 classifier.add(Dropout(0.25))
 
-classifier.add(Conv2D(64, (3, 3), activation="relu", kernel_regularizer=l2(0.001)))
+classifier.add(Conv2D(64, (3, 3), activation="relu"))
 classifier.add(MaxPool2D(pool_size=(2, 2)))
 classifier.add(Dropout(0.25))
 
@@ -25,8 +25,8 @@ classifier.add(Dropout(0.25))
 classifier.add(Flatten())
 
 # Add fully connected layer
-classifier.add(Dense(128, activation="relu", kernel_regularizer=l2(0.001)))
-classifier.add(Dense(mapping.OutputNeurons, activation="softmax"))
+classifier.add(Dense(128, activation="relu"))
+classifier.add(Dense(OutputNeurons, activation="softmax"))
 
 # Compile the model
 classifier.compile(
@@ -43,20 +43,17 @@ early_stopping = EarlyStopping(
 rlronp = ReduceLROnPlateau(monitor="val_loss", factor=0.8, patience=5, verbose=1)
 
 # Model training and evaluation
-classifier.fit(
-    data_loader.training_set,
+history = classifier.fit(
+    training_set,
     epochs=50,
     batch_size=8,
     callbacks=[early_stopping, rlronp],
-    validation_data=data_loader.test_set,
+    validation_data=test_set,
 )
 
 EndTime = time.time()
 
 print("###### Total Time Taken: ", round((EndTime - StartTime) / 60), "Minutes ######")
-
-# Save cnn model
-classifier.save("model.h5")
 
 # Save cnn model
 classifier.save("model.h5")
