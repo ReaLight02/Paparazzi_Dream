@@ -2,7 +2,6 @@
 This repository was created for the purpose of allowing the team members to work together in a simple way. The main objective is to create a CNN model that trains itself on a dataset and tries to predict the outcomes on images it has never seen before. The secondary objective is to apply filters on these images.
 
 ## Repository organization
-Paparazzi Dream <br>
 &nbsp;&nbsp;&nbsp;&nbsp;CNN <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;CNN.py <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cropping.py <br>
