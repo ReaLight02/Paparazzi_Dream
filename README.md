@@ -3,8 +3,8 @@ This repository was created for the purpose of allowing the team members to work
 
 ## Team members
 [@Realight02](https://github.com/ReaLight02) - project manager <br>
-[@ScherzoNo](https://www.github.com/username) - cnn specialist <br>
-[@ShinobuSmile](https://www.github.com/username) - OpenCV expert <br>
+[@ScherzoNo](https://github.com/ScherzoNo) - cnn specialist <br>
+[@ShinobuSmile](https://github.com/ShinobuSmile) - OpenCV expert <br>
 
 ## Repository organization
 The repository is organized in folders, where each has a specific goal: <br>
